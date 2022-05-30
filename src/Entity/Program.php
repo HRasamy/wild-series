@@ -19,7 +19,7 @@ class Program
     #[ORM\Column(type: 'text')]
     private $synopsis;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable:true)]
     private $poster;
 
     #[ORM\ManyToOne(targetEntity: Category::class)]
@@ -30,6 +30,7 @@ class Program
     {
         return $this->id;
     }
+    
 
     public function getTitle(): ?string
     {
